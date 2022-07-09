@@ -1,14 +1,11 @@
-# Líneas comentadas para la navegación sin mapa SLAM.
+# Cambiar a valores comentados para la navegación sin mapa SLAM.
 
 global_costmap:
-# global_frame: robot_odom
-  global_frame: map #aaaa
+  global_frame: map #robot_odom
   robot_base_frame: robot_base_link
   update_frequency: 5.0
-# static_map: false
-  static_map: true
-# rolling_window: true
-  rolling_window: false
+  static_map: true #false
+  rolling_window: false #true
   resolution: 0.05 
 
   plugins:
@@ -19,7 +16,7 @@ global_costmap:
 #      type: "costmap_2d::VoxelLayer"
     - name: static_map
       type: "costmap_2d::StaticLayer"
-    - name: inflation_layer_global
+    - name: inflation_layer
       type: "costmap_2d::InflationLayer"
 
   static_map:
