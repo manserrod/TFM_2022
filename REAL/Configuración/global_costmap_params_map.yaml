@@ -1,0 +1,28 @@
+# Cambiar a valores comentados para la navegación sin mapa SLAM.
+
+global_costmap:
+  global_frame: map #robot_odom
+  robot_base_frame: robot_base_link
+  update_frequency: 5.0
+  static_map: true #false
+  rolling_window: false #true
+  resolution: 0.05 
+
+  plugins:
+
+#    - name: obstacle_laser_layer
+#      type: "costmap_2d::VoxelLayer"
+#    - name: obstacle_camera_layer
+#      type: "costmap_2d::VoxelLayer"
+    - name: static_map
+      type: "costmap_2d::StaticLayer"
+    - name: inflation_layer
+      type: "costmap_2d::InflationLayer"
+
+  static_map:
+      static_map: true
+      map_topic: /rtabmap/grid_map
+      subscribe_to_updates: true
+      unknown_cost_value: -1
+      trinary_costmap: true
+      use_maximum: false
