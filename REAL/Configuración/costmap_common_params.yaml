@@ -7,7 +7,7 @@ update_frequency: 2.0
 
 #Capa de inflación
 inflation_layer:
-  inflation_radius: 0.5
+  inflation_radius: 0.2
 
 #Capa de osbtáculos 1
 obstacle_laser_layer:
